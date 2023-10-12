@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/shylajan23/Assignment_2_30723299/main/Global%20YouTube%20Statistics.csv"
+    },
+    "repeat": {"layer": ["category", "channel_type"]},
+    "spec": {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "aggregate": "count",
+          "field": {"repeat": "layer"},
+          "type": "quantitative",
+          "title": "Total Gross"
+        },
+        "color": {"datum": {"repeat": "layer"}, "title": "Gross"}
+       
+      }
+    },
+    "config": {
+      "mark": {"invalid": null}
+    }
+  }
+  

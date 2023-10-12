@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/shylajan23/Assignment_2_30723299/main/Global%20YouTube%20Statistics.csv"},
+    "encoding": {
+      "x": {"timeUnit": "yearmonthdate", "field": "created_year"},
+      "tooltip": [
+        {"timeUnit": "yearmonthdate", "field": "date"},
+        {"field": "lowest_monthly_earnings", "type": "quantitative"},
+        {"field": "highest_monthly_earnings", "type": "quantitative"}
+      ]
+    },
+    "layer": [{
+      "mark": {"type": "line", "color": "orange"},
+      "encoding": {
+        "y": {"field": "highest_monthly_earnings", "type": "quantitative"}
+      }
+    }, {
+      "mark": {"type": "line", "color": "red"},
+      "encoding": {
+        "y": {"field": "lowest_monthly_earnings", "type": "quantitative"}
+      }
+    }, {
+      "mark": "rule",
+      "params": [{
+        "name": "hover",
+        "select": {"type": "point", "on": "pointerover"}
+      }],
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "black"
+          },
+          "value": "transparent"
+        }
+      }
+    }],
+    "config": {"axisY": {"minExtent": 30}}
+  }

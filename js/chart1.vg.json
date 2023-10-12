@@ -1,0 +1,9 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/shylajan23/Assignment_2_30723299/main/Global%20YouTube%20Statistics.csv"},
+    "mark": "circle",
+    "encoding": {
+      "x": {"field": "subscribers", "type": "quantitative"},
+      "y": {"field": "video_views_for_the_last_30_days", "type": "quantitative"}
+    }
+  }
